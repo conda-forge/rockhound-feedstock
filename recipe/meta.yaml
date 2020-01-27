@@ -1,5 +1,5 @@
 {% set name = "rockhound" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 22b6c90a5dc0e3c37aa2f899b850ddfd18b2c87c2b9d61632e6297870c11a4dc
+  sha256: 9ff20ff8a9815fb4160ba4d239ed8ecb203139ddc72aab87e9fb10ba6bcc7743
 
 build:
   noarch: python
