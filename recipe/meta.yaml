@@ -24,6 +24,8 @@ requirements:
     - xarray
     - pandas
     - rasterio
+    - netcdf4
+    - dask
 
 test:
   imports:
