@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9ff20ff8a9815fb4160ba4d239ed8ecb203139ddc72aab87e9fb10ba6bcc7743
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - pooch >=0.5
     - xarray
     - pandas
@@ -28,6 +28,8 @@ requirements:
     - dask
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - rockhound
 
